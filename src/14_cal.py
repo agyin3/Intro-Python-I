@@ -30,3 +30,37 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+# initial variables for month and year
+today = datetime.now()
+month = today.month
+year = today.year
+
+# initial variable for cal(text calendar)
+cal = calendar.TextCalendar(firstweekday=6)
+
+#grabbing sys arguments
+sys_args = sys.argv
+length = len(sys_args)
+
+# function to print cal for given month
+def print_cal(y, m):
+  print(cal.formatmonth(y, m))
+
+# check month and date input are valid
+def check_date(m = month, y = year):
+  if(0 < int(m) <= 12 and 1 <= int(y) <= 9999):
+    print_cal(int(y), int(m))
+  elif(0 > int(m) or int(m) > 12):
+    print('Invalid input!\nMonth must a number between 1 - 12')
+  else:
+    print('Invalid input!\nYear must be a number between 1 - 9999')
+
+
+# Print calendar based on input
+if (length == 1):
+  print_cal(year, month)
+elif (length == 2):
+  check_date(sys_args[1])
+else:
+  check_date(sys_args[1], sys_args[2])
