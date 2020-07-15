@@ -20,5 +20,5 @@ f.close()
 # sure that it contains what you expect it to contain
 
 bar = open('bar.txt', 'w')
-bar.write('This is the first line\nThis is the second line\nThis is the third line\n')
+bar.write('This is the first lineeeeeeeeee\nThis is the second line\nThis is the third line\n')
 bar.close()
